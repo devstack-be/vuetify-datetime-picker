@@ -3,6 +3,7 @@
     <template v-slot:activator="{ on }">
       <v-text-field
               v-bind="textFieldProps"
+              :error-messages="errorMessages"
               :disabled="disabled"
               :loading="loading"
               :label="label"
@@ -110,6 +111,10 @@
       },
       textFieldProps: {
         type: Object
+      },
+      errorMessages: {
+        type: [String,Array],
+        default: null
       },
       datePickerProps: {
         type: Object
